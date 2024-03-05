@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <h3>BOOKS:</h3>
+        <form action="/save" method="post" enctype="multipart/form-data">
+            <input type="text" id="maSP" name="maSanPham" placeholder="Nhập mã sản phẩm"> <br>
+            <input type="text" id="tenSP" name="tenSanPham" placeholder="Nhập tên sản phẩm"> <br>
+            <input type="text" id="soLuong" name="soLuong" placeholder="Nhập số lượng"> <br>
+            <input type="file" id="img" name="image" accept="image"> <br>
+            <input type="submit" value="Thêm">
+        </form>
+
+        <table>
+            <caption>Danh sach khoa hoc</caption>
+
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Ten San Pham</th>
+                    <th>So Luong</th>
+                    <th>Hinh Anh</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% courses.forEach(item=> {) %>
+                    <tr>
+                        <td>
+                            <%= item.id%>
+                        </td>
+                        <td>
+                            <%= item.name%>
+                        </td>
+                        <td>
+                            <%= item.quantity%>
+                        </td>
+                        <td>
+                            <%= item.image%>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
